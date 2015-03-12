@@ -1,0 +1,16 @@
+Schedule and deliverable:
+(Basically the same things as Mike. I will try to work together with Mike on these tasks and maybe speed up some tasks.)
+
+- example posts for data.js -- Weds 03/11 by 11:59pm (estimate: 1 hr)
+
+- search bar for columns index.html -- Thur 03/12 by 11:59pm (estimate: 2 hrs)
+
+- change interface to reflect social media aspects -- Fri 03/13 by 11:59pm (estimate: 1 hr)
+
+- account login system -- Fri 03/13 by 11:59pm (estimate: 2 hrs)
+
+- link twitter account -- Sat 03/14 by 11:59pm (estimate: 3 hrs)
+
+- add and delete columns -- Sun 03/15 by 11:59pm (estimate: 3 hrs)
+
+- do a dumb version of the dummy site with only html, php and css (estimate 2 hours)
