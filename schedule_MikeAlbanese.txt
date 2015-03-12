@@ -4,7 +4,7 @@ Schedule and deliverable:
 
 - search bar for columns index.html -- Thur 03/12 by 11:59pm (estimate: 2 hrs)
 
-- change interface to reflect social media aspects -- Fri 03/12 by 11:59pm (estimate: 1 hr)
+- change interface to reflect social media aspects -- Fri 03/13 by 11:59pm (estimate: 1 hr)
 
 - account login system -- Fri 03/13 by 11:59pm (estimate: 2 hrs)
 
