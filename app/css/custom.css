@@ -10,7 +10,11 @@ table {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 1px solid black;
+  
+  table-layout: auto;
   max-width: 200px;
+  overflow: hidden;  
 }
 
 td.mailContact,
