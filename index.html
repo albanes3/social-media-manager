@@ -6,24 +6,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="app/css/custom.css">
-    <script>
-      document.getElementByClass("tfbutton").addEventListener("click", searchMailItems, true);
-      searchMailItems = function(searchTerm, data) {
-        var sheet = document.styleSheets[0];
-        
-        var posts = getElementsByClassName("mail-item");
-        for(var i = 0; i < posts.length; i++)
-        {
-           element.style.color = '#ff0000';
-          if($('#' + i.id).find('.mailContact').indexOf(searchTerm) > -1 && 
-             $('#' + i.id).find('.mailSubject').indexOf(searchTerm) > -1 &&
-             $('#' + i.id).find('.mailMessage').indexOf(searchTerm) > -1){
-            sheet.insertRule("#" + i.id + " { display: none; }", 1);
-           
-          }
-        }
-      }
-    </script>
+    
   </head>
 
   <body>
@@ -60,12 +43,12 @@
 
           <table id="mail_items" class="hero-unit table table-hover" style="background-color: #FFFFFF">
             <!-- HTML for SEARCH BAR -->
-            <div id="tfheader">
-              <form id="tfnewsearch" method="get">
-                      <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton" onclick="searchMailItems()">
-              </form>
+            <!--<div id="tfheader">
+              <form id="tfnewsearch" method="get">-->
+            <input type="text" id="tfq" class="tftextinput" name="q" size="21" maxlength="120" value="Search by # or keyword"><input type="submit" id="tfb" value="search" class="tfbutton">
+              <!--</form>
             <div class="tfclear"></div>
-            </div>
+            </div>-->
             <!--                     -->
             <tbody id="mail_items_TB">
             </tbody>
@@ -78,6 +61,47 @@
 
     <div id="move_to_selector" class="move-to-selector hide"></div>
 
+
+    <script type="text/javascript">
+      searchMailItems = function() {
+        var sheet = document.styleSheets[0];
+        var searchTerm = document.getElementsByClassName("tfbutton").item(0).getAttribute('value');
+        var posts = getElementsByClassName("mail-item");
+        alert("Hello! I am an alert box!!");
+        for(var i = 0; i < posts.length; i++)
+        {
+          posts.item(i).style.color = '#ff0000';
+          if($('#' + posts.item(i).getAttribute('id')).find('.mailContact').indexOf(searchTerm) < 0 || 
+             $('#' + posts.item(i).getAttribute('id')).find('.mailSubject').indexOf(searchTerm) > 0 ||
+             $('#' + posts.item(i).getAttribute('id')).find('.mailMessage').indexOf(searchTerm) > 0){
+            sheet.insertRule("#" + i.id + " { display: none; }", 1);
+            alert("hi"); 
+          }
+        }
+        alert("Hello! I am an alert box!!");
+        //alert("" + posts.item(0).getAttribute('id'));
+      }
+
+      window.onload = function(){ 
+        //Get submit button
+        var submitfield = document.getElementById("tfq");
+        var submitbutton = document.getElementById("tfb");
+        //Add listener to submit button
+        if(submitfield.addEventListener){
+          submitfield.addEventListener("click", function() {
+            if (submitfield.value == 'Search by # or keyword'){//Customize this text string to whatever you want
+              submitfield.value = '';
+            }
+          });
+        }
+        if(submitbutton.addEventListener){
+          submitbutton.addEventListener("click", searchMailItems);
+        }
+        
+      }
+      
+      
+    </script>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/es5-shim/es5-sham.js"></script>
