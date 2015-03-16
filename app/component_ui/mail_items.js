@@ -14,6 +14,8 @@ define(
     function mailItems() {
 
       this.defaultAttrs({
+        searchBar: 'tfnewsearch',
+        searchButton: 'tfbutton',
         deleteFolder: 'trash',
         selectedClass: 'selected',
         allowMultiSelect: true,
@@ -34,6 +36,21 @@ define(
 
       this.updateMailItemSelections = function(ev, data) {
         this.attr.selectedMailItems = data.selectedIds;
+      }
+
+      this.searchMailItems = function(searchTerm, data) {
+        var sheet = document.styleSheets[0];
+        
+        var posts = getElementsByClassName("mail-item");
+        for(var i = 0; i < slides.length; i++)
+        {
+          if($('#' + i.id).find('.mailContact').indexOf(searchTerm) > -1 && 
+             $('#' + i.id).find('.mailSubject').indexOf(searchTerm) > -1 &&
+             $('#' + i.id).find('.mailMessage').indexOf(searchTerm) > -1){
+            sheet.insertRule("#" + i.id + " { display: none; }", 1);
+            element.style.color = '#ff0000';
+          }
+        }
       }
 
       this.updateFolderSelections = function(ev, data) {

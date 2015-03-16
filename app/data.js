@@ -37,7 +37,7 @@ define(
           "id": "mail_2143",
           "contact_id": "contact_377",
           "folders": ["inbox", "later"],
-          //"important": "false",
+          "important": "false",
           "time": 1334884976104,
           "subject": "Neque porro quisquam velit!!",
           "message": "Curabitur sollicitudin mi eget sapien posuere semper. Fusce at neque et lacus luctus vulputate vehicula ac enim"
